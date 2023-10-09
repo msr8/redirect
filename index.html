@@ -1,0 +1,20 @@
+<html>
+    <script>
+        function main() {
+            const DATA = {
+                "py": "https://github.com/msr8/school/blob/main/py/lab-1.py",
+            }
+
+            var key = window.location.search.substring(1);
+            // Check if key is in DATA
+            if (key in DATA) {window.location.replace(DATA[key]);}
+            else {document.getElementById("span").innerHTML = `Invalid key: <span style="color:red">${key}</span><br><br>All the available keys are: ${Object.keys(DATA)}`}
+
+            console.log(key)
+        }
+
+        window.onload = main;
+    </script>
+
+    <span id="span"></span>
+</html>
